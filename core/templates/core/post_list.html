@@ -1,0 +1,23 @@
+{% extends 'core/index.html' %}
+
+{% block posts %}
+    {% for post in posts %}
+
+        <li>
+            <div class="timeline-image">
+                <img class="img-circle img-responsive" src="" alt="">
+            </div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4>{{ post.date }}</h4>
+                    <h4 class="subheading">{{ post.title }}</h4>
+                </div>
+                <div class="timeline-body">
+                    <p class="text-muted">{{ post.text|linebreaksbr }}</p>
+                </div>
+            </div>
+        </li>
+
+    {% endfor %}
+{% endblock posts %}
+
