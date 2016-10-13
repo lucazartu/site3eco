@@ -9,6 +9,7 @@ class Post(models.Model):
 	title = models.CharField(max_length=250)
 	date = models.DateTimeField()
 	text = models.TextField()
+	thumb = models.ImageField(upload_to='thumbs/%Y/%m/%d/', null=True, blank=False)
 
 	def publish(self):
 		self.published_date = timezone.now()

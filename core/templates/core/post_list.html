@@ -3,20 +3,20 @@
 {% block posts %}
     {% for post in posts %}
 
-        <li>
-            <div class="timeline-image">
-                <img class="img-circle img-responsive" src="" alt="">
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <h4>{{ post.date }}</h4>
-                    <h4 class="subheading">{{ post.title }}</h4>
+            <li class="{% if forloop.counter0|divisibleby:2 %}timeline-inverted{% endif %}">
+                <div class="timeline-image">
+                    <img class="img-circle img-responsive" src="{{ post.thumb.url }}" alt="">
                 </div>
-                <div class="timeline-body">
-                    <p class="text-muted">{{ post.text|linebreaksbr }}</p>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>{{ post.date }}</h4>
+                        <h4 class="subheading">{{ post.title }}</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">{{ post.text|linebreaksbr }}</p>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
     {% endfor %}
 {% endblock posts %}
