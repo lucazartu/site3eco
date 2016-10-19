@@ -1,0 +1,36 @@
+{% block portfolio_full %}
+    
+    {% for port in ports %}
+        <div class="portfolio-modal modal fade" id="portfolioModal{{port.id}}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here -->
+                                    <h2>{{ port.project_name }}</h2>
+                                    <p class="item-intro text-muted">{{ port.intro }}</p>
+                                    <img class="img-responsive img-centered" src="{{ port.image.url }}" alt="">
+                                    <p>{{ port.description|safe }}</p>
+                                    <ul class="list-inline">
+                                        <li>Date: {{ port.date }}</li>
+                                        <li>Client: {{ port.client }}</li>
+                                        <li>Category: {{ port.category }}</li>
+                                    </ul>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock portfolio_full %}

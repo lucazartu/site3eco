@@ -6,6 +6,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.fullsite),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),	
 ]
 
 urlpatterns += staticfiles_urlpatterns()

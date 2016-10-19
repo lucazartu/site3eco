@@ -1,0 +1,43 @@
+{% block form %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Fale conosco</h2>
+                <h3 class="section-subheading text-muted">Existimos em nossas relações.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form name="sentMessage" id="contactForm" role="form" action="" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form.name}}
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                {{ form.email_contact }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.phone }}
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form.content }}
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                            <div id="success"></div>
+                            <button type="submit" class="btn btn-xl">Enviar mensagem</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock form %}
