@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import Post
 from .models import Portfolio
 from .models import ContactForm
+from django.contrib import messages
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.template import Context
@@ -56,7 +57,7 @@ def fullsite(request):
 				headers = {'Reply-To': email_contact }
  			)
 			email.send()
-			return HttpResponseRedirect('/')
+			return HttpResponseRedirect('/sucess')
 
 			
 
@@ -65,3 +66,11 @@ def fullsite(request):
 	context_general["ports"] = Portfolio.objects.order_by('date')
 
 	return render(request, 'core/index.html', context_general)
+
+def contact_sucess(request):
+
+
+	if request.method == 'POST':
+			return HttpResponseRedirect('/')
+	
+	return render(request, 'core/success_form.html', {})

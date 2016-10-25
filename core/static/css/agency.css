@@ -746,3 +746,19 @@ body {
   max-width:5em;
   margin-top: -0.8em;
 }
+
+section#contact-sucess {
+  background-color: #222222;
+  background-image: url('../img/map-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+section#contact-sucess h2{
+  color: white;
+}
+
+section#contact-sucess h3{
+  color: white;
+}
