@@ -1,5 +1,5 @@
 {% block portfolio_full %}
-    
+
     {% for port in ports %}
         <div class="portfolio-modal modal fade" id="portfolioModal{{port.id}}" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
@@ -20,11 +20,11 @@
                                     <img class="img-responsive img-centered" src="{{ port.image.url }}" alt="">
                                     <p>{{ port.description|safe }}</p>
                                     <ul class="list-inline">
-                                        <li>Date: {{ port.date }}</li>
-                                        <li>Client: {{ port.client }}</li>
-                                        <li>Category: {{ port.category }}</li>
+                                        <li>Quando: {{ port.date }}</li>
+                                        <li>Cliente: {{ port.client }}</li>
+                                        <li>Projeto: {{ port.category }}</li>
                                     </ul>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-hand-o-left"></i> VOLTAR </button>
                                 </div>
                             </div>
                         </div>
