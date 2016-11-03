@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tmp9u0lns(wui)u*ii*wq*_o^zc+x82-+&5#1288_u5ety-q5e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.3ecologias.net', '3ecologias.net']
 
 
 # Application definition
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'ecosite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'site3eco',
+        'USER': 'admin3eco',
+        'PASSWORD': 'Tatub0lana0b0la',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -126,7 +130,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #media files
 
-MEDIA_ROOT = '/home/lucas/3ecologias/site/ecosite/media/'
+MEDIA_ROOT = '/home/capivara/site3eco/media/'
 
 MEDIA_URL = '/media/'
 
@@ -134,11 +138,10 @@ MEDIA_URL = '/media/'
 
 DEFAULT_FROM_EMAIL = 'admin@3ecologias.net'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'Email intermediario'
-EMAIL_HOST_PASSWORD = 'Senha do Email'
+EMAIL_HOST_USER = 'juliaroberts@3ecologias.net'
+EMAIL_HOST_PASSWORD = 'Tatub0lana0b0la'
 EMAIL_USE_TLS = True 
 EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 #CKEDITOR
 
