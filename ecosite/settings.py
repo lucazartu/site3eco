@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tmp9u0lns(wui)u*ii*wq*_o^zc+x82-+&5#1288_u5ety-q5e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.3ecologias.net', '3ecologias.net']
 
@@ -78,12 +78,8 @@ WSGI_APPLICATION = 'ecosite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'site3eco',
-        'USER': 'admin3eco',
-        'PASSWORD': 'Tatub0lana0b0la',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 
@@ -130,7 +126,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #media files
 
-MEDIA_ROOT = '/home/capivara/site3eco/media/'
+MEDIA_ROOT = '/home/lucas/3ecologias/site/ecosite/media/'
 
 MEDIA_URL = '/media/'
 
