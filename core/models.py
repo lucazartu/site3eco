@@ -59,9 +59,7 @@ class Portfolio(models.Model):
 	description = RichTextField()
 	date = models.DateField()
 	client = models.CharField(max_length=20)
-	id = models.AutoField(primary_key=True)
 
 	def __unicode__(self):
 		return self.project_name
-
 

@@ -7,7 +7,11 @@ from django.contrib import messages
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.template import Context
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404, HttpResponse
+import json
+from django.db.models import Count
+from django.core.serializers.json import DjangoJSONEncoder
+from django.core import serializers
 
 
 
@@ -58,12 +62,11 @@ def fullsite(request):
  			)
 			email.send()
 			return HttpResponseRedirect('/sucess')
-
 			
 
 	context_general["form"] = form_class
 
-	context_general["ports"] = Portfolio.objects.order_by('date')
+	context_general["ports"] = Portfolio.objects.all()[:3]
 
 	return render(request, 'core/index.html', context_general)
 
@@ -74,3 +77,13 @@ def contact_sucess(request):
 			return HttpResponseRedirect('/')
 	
 	return render(request, 'core/success_form.html', {})
+
+def load_more(request):
+
+	if request.is_ajax():
+		new_ports = Portfolio.objects.all()[3:]
+		ports_json = serializers.serialize('json', new_ports)
+
+		return HttpResponse(ports_json, content_type='application/json')
+	else:
+		return Http404

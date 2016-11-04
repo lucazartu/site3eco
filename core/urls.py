@@ -7,7 +7,8 @@ from . import views
 urlpatterns = [
     url(r'^$', views.fullsite),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    url(r'^sucess/', views.contact_sucess),	
+    url(r'^sucess/', views.contact_sucess),
+    url(r'^ajax/more/$', views.load_more),	
 ]
 
 urlpatterns += staticfiles_urlpatterns()

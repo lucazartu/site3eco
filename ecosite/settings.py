@@ -134,8 +134,7 @@ MEDIA_URL = '/media/'
 
 DEFAULT_FROM_EMAIL = 'admin@3ecologias.net'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'Email intermediario'
-EMAIL_HOST_PASSWORD = 'Senha do Email'
+EMAIL_HOST_USER = 'juliaroberts@3ecologias.net'
 EMAIL_USE_TLS = True 
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
