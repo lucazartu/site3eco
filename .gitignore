@@ -89,3 +89,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+#Database SQLITE3
+
+mydatabase
+db.sqlite3

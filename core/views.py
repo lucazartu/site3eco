@@ -66,7 +66,7 @@ def fullsite(request):
 
 	context_general["form"] = form_class
 
-	context_general["ports"] = Portfolio.objects.all()[:3]
+	context_general["ports"] = Portfolio.objects.all().order_by('-date')[:3]
 
 	return render(request, 'core/index.html', context_general)
 
@@ -81,7 +81,7 @@ def contact_sucess(request):
 def load_more(request):
 
 	if request.is_ajax():
-		new_ports = Portfolio.objects.all()[3:]
+		new_ports = Portfolio.objects.all().order_by('-date')[3:]
 		ports_json = serializers.serialize('json', new_ports)
 
 		return HttpResponse(ports_json, content_type='application/json')
